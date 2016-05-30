@@ -1,0 +1,13 @@
+{% extends "mainpage.html" %}
+
+{% block maincontent %}
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href='{{page.PageName}}/edit'>Edit</a></li>
+  <li role="presentation"><a href='{{page.PageName}}/history'>History</a></li>
+</ul>
+
+<b><h1>{{page.PageName}}</h1></b>
+<br>
+{{page.PageContent |safe}}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "mainpage.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block maincontent %}
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href='/{{page.PageName}}/edit'>Edit</a></li>
+  <li role="presentation"><a href='/{{page.PageName}}/history'>History</a></li>
+</ul>
+<b><h1>{{page.PageName}}</h1></b>
+
+<form class="input-large" method=post>
+
+{{wtf.form_field(form.PageContent)}}
+<i><p class="text-muted">Some HTML is OK.</p></i>
+
+  <button type="submit" class="btn btn-default">Save</button>
+
+</form>
+
+
+
+
+{% endblock %}

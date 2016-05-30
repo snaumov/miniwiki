@@ -1,0 +1,31 @@
+{% extends "mainpage.html" %}
+
+{% block maincontent %}
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href='/{{page.PageName}}/edit'>Edit</a></li>
+  <li role="presentation" class="active"><a href='/{{page.PageName}}/history'>History</a></li>
+</ul>
+
+<h2>Page History</h2>
+
+{% for ph in pagehistory %}
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div style="color:#009933">
+      Added:"{{ph.content_added}}"
+    </div>
+    <br>
+    <div style="color:#FF0000">
+      Removed:"{{ph.content_removed}}"
+    </div>
+    <br>
+    <i>{{ph.dateofchange}}</i>
+    <br>
+    <a href='/{{page.PageName}}/history/{{ph.id}}'>Preview</a>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

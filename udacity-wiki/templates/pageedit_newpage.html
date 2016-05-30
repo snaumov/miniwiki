@@ -1,0 +1,16 @@
+{% extends "mainpage.html" %}
+
+{% block maincontent %}
+
+<b><h1 style="color:red;">{{pagename}}</h1></b>
+
+<form class="input-large" method=post>
+
+
+
+{{wtf.form_field(form.PageContent)}}
+  <button type="submit" class="btn btn-default">Save</button>
+
+</form>
+
+{% endblock %}

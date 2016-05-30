@@ -1,0 +1,19 @@
+{% extends "mainpage.html" %}
+
+{% block maincontent %}
+
+<form method='post'>
+
+<button type='Submit'>Apply</button>
+
+</form>
+
+<form action="/{{pagename}}/history">
+    <input type="submit" value="Cancel">
+</form>
+
+<b><h1>{{pagename}}</h1></b>
+<br>
+{{ph.currentcontent |safe}}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block body %}
+
+<div class="col-md-10">
+
+  {% block header %}
+
+<!--  <div class="row">
+    <div class="col-md-4 col-md-offset-10">
+
+      <a href='/login'>Login/Register</a>
+    </div>
+  </div>
+-->
+
+  {% endblock %}
+
+  <div class="col-md-7">
+    <div class="row">
+
+    {% block maincontent %}
+
+    <div class="page-header">
+      <h1>MyTinyWiki <small>Small CRUD-like wiki app</small></h1>
+    </div>
+    <br>
+    <h2>Oh!.. hi</h2>
+    <br>
+    To create a new page simply open it in browser. Once created you can add some text content, view it's history and revert the changes back.
+    Below you can see the list of existing pages. Enjoy!
+    <br>
+  </div>
+
+<div class="row">
+    {% for current_page in current_pages %}
+
+    <a href='/{{current_page.PageName}}'>{{current_page.PageName }}</a>
+    <br>
+
+    {% endfor %}
+  </div>
+
+
+
+    {% endblock %}
+
+
+
+  </div>
+
+
+</div>
+
+{% endblock %}
